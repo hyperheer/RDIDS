@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@android:color/white"
+    android:elevation="8dp">
+
+    <!-- 标题文本 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入要选择的时间"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"
+        android:textAlignment="center" />
+
+    <!-- 时间输入框 -->
+    <EditText
+        android:id="@+id/t_start"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入起始时间"
+        android:paddingHorizontal="12dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/t_end"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="请输入结束时间"
+        android:paddingHorizontal="12dp"
+        android:inputType="text" />
+
+    <!-- 确认和取消按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/t_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/my_light_primary"
+            android:text="确认"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp" />
+        <Button
+            android:id="@+id/t_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="80dp"
+            android:backgroundTint="@color/my_light_primary"
+            android:text="取消"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp" />
+    </LinearLayout>
+</LinearLayout>

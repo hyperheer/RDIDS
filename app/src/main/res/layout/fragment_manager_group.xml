@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.ManagerGroupFragment">
+
+    <!-- 顶部标题栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/my_light_primary"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="小组管理"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <!-- 左侧TextView -->
+        <TextView
+            android:id="@+id/team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="#333"
+            android:textSize="18sp" />
+
+        <!-- 中间空白视图，占据剩余空间 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- 右侧Button -->
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:backgroundTint="@color/my_light_primary"
+            android:text="刷新"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+
+    <!-- 创建小组按钮 -->
+    <Button
+        android:id="@+id/btn_join_group"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="16dp"
+        android:backgroundTint="@color/my_light_primary"
+        android:text="创建小组"
+        android:textColor="#FFFFFF" />
+
+    <!-- 区域划分和解散小组按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginVertical="16dp">
+
+        <!-- 新增：区域划分按钮 -->
+        <Button
+            android:id="@+id/btn_area_division"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#4CAF50"
+            android:text="区域设置"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+
+        <!-- 解散小组按钮 -->
+        <Button
+            android:id="@+id/btn_exit_group"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#E91E63"
+            android:text="解散小组"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- 成员列表区域 -->
+    <LinearLayout
+        android:id="@+id/ll_member_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <!-- 表头布局 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F5F5F5"
+            android:padding="8dp">
+
+            <!-- 姓名 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="账号"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- 性别 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="姓名"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- 账号 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="性别"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- 身份 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="身份"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- 区域 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="区域"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_members"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</LinearLayout>
